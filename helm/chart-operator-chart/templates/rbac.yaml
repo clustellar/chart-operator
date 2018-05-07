@@ -34,9 +34,9 @@ rules:
 - apiGroups:
   - rbac.authorization.k8s.io
   resources:
-  - clusterrolebindings
+  - clusterroles
   verbs:
-  - "create"
+  - "bind"
 - nonResourceURLs:
   - "/"
   - "/healthz"
