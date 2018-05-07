@@ -24,6 +24,7 @@ rules:
   - pods
   verbs:
   - "get"
+  - "list"
 - nonResourceURLs:
   - "/"
   - "/healthz"
