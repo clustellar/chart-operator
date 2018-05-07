@@ -24,6 +24,10 @@ func (r *Resource) GetCurrentState(ctx context.Context, obj interface{}) (interf
 		return nil, microerror.Mask(err)
 	}
 
+	err = r.helmClient.EnsureTillerInstalled()
+	if err != nil {
+		return nil, microerror.Mask(err)
+	}
 	releaseHistory, err := r.helmClient.GetReleaseHistory(releaseName)
 	if err != nil {
 		return nil, microerror.Mask(err)

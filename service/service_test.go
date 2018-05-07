@@ -2,6 +2,7 @@ package service
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -25,6 +26,7 @@ func Test_Service_New(t *testing.T) {
 			w.Header().Set("Upgrade", "SPDY/3.1")
 			w.WriteHeader(http.StatusSwitchingProtocols)
 		} else {
+			fmt.Println("path:", r.URL.Path)
 			// tiller pod name request
 			podList := v1.PodList{
 				Items: []v1.Pod{
