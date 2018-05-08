@@ -43,6 +43,12 @@ rules:
   - clusterroles
   verbs:
   - "bind"
+- apiGroups:
+  - extensions
+  resources:
+  - deployments
+  verbs:
+  - "create"
 - nonResourceURLs:
   - "/"
   - "/healthz"
