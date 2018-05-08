@@ -21,6 +21,12 @@ rules:
 - apiGroups:
   - ""
   resources:
+  - pod/portforward
+  verbs:
+  - "create"
+- apiGroups:
+  - ""
+  resources:
   - pods
   verbs:
   - "get"
